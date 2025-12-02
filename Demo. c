@@ -1,0 +1,30 @@
+#include <stdio.h>
+
+struct Complex {
+    float real;
+    float imag;
+};
+
+int main() {
+    struct Complex a = {3, 4};
+    struct Complex b = {1, -2};
+    struct Complex add, mul, conj;
+
+    // Addition
+    add.real = a.real + b.real;
+    add.imag = a.imag + b.imag;
+
+    // Multiplication
+    mul.real = a.real * b.real - a.imag * b.imag;
+    mul.imag = a.real * b.imag + a.imag * b.real;
+
+    // Conjugate of a
+    conj.real = a.real;
+    conj.imag = -a.imag;
+
+    printf("Addition = %.1f + %.1fi\n", add.real, add.imag);
+    printf("Multiplication = %.1f + %.1fi\n", mul.real, mul.imag);
+    printf("Conjugate of a = %.1f + %.1fi\n", conj.real, conj.imag);
+
+    return 0;
+}
